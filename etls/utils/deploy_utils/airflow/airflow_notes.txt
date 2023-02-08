@@ -1,0 +1,75 @@
+Install DBT python env :
+https://towardsdatascience.com/install-dbt-1bd6a4259a14
+
+
+-- # Senthil notes to run on Local window machine with ubuntu subsystem installed
+-- copy dag python files from dbt source folder to airflow dag path
+$cp /mnt/c/Senthil_Repo/SquareShift/Edcast/OnWorks/GCP/domo_migrate/git_projects/edc-looker/etls/py_utils/airflow/*.py /home/senthil245/airflow/dags
+
+-------  airflow services to start
+-- airflow start server
+$airflow webserver -p 8089
+
+# To kill incase, process has not closed
+### kill -9 process_id
+
+-- airflow scheduler
+$airflow scheduler
+
+senthil245@DESKTOP-6T9K16L:/mnt/c/Senthil_Repo/SquareShift/Edcast/OnWorks/GCP/domo_migrate/git_projects/edc-looker/etls$
+/mnt/c/Senthil_Repo/SquareShift/Edcast/OnWorks/GCP/domo_migrate/git_projects/concord-transforms/etls/venv/Scripts/dbt.exe run --full-refresh --vars "var_cust_id: 222" --select standard_reports.searches
+
+Final Linux command :
+cd /mnt/c/Senthil_Repo/SquareShift/Edcast/OnWorks/GCP/domo_migrate/git_projects/edc-looker/etls && /home/senthil245/dbt-venv/bin/dbt run --profiles-dir /home/senthil245/dbt_profiles --full-refresh --vars "var_cust_id:  222" --select standard_reports.searches
+
+--- postgres installation and run parallel tasks
+https://newt-tan.medium.com/apache-airflow-installation-based-on-postgresql-database-26549b154d8
+
+- install postgres airflow lib
+pip install apache-airflow['postgres']
+
+- change the config file of airflow, go to airflow.cfg:
+
+# The executor class that airflow should use. Choices include
+# SequentialExecutor, LocalExecutor, CeleryExecutor
+executor = LocalExecutor
+The LocalExecutor can parallelize task instances locally.
+
+sql_alchemy_conn = postgresql+psycopg2://airflow:airflow@localhost/airflow
+
+- Install
+sudo apt-get install postgresql postgresql-contrib
+sudo -u postgres psql
+
+- Create users
+sudo -u postgres psql
+CREATE USER airflow PASSWORD 'xxx';
+CREATE DATABASE airflow;
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO airflow;
+
+- Restart service
+sudo service postgresql restart
+
+airflow initdb
+
+Troubleshoot steps
+
+https://stackoverflow.com/questions/12906351/importerror-no-module-named-psycopg2
+Step 1: Install the dependencies
+
+sudo apt-get install build-dep python-psycopg2
+Step 2: Run this command in your virtualenv
+
+pip install psycopg2-binary
+
+https://stackoverflow.com/questions/66160780/first-time-login-to-apache-airflow-asks-for-username-and-password-what-is-the-u
+airflow users  create --role Admin --username admin --email admin --firstname admin --lastname admin --password admin
+
+-----------------------------------
+
+Dockerizing dbt Transformations for Managed Airflow: Docker, dbt, and GCP Cloud Composer
+https://www.data-max.io/post/dbt-gcp-composer-airflow-docker
+
+https://discourse.getdbt.com/t/how-to-run-dbt-on-cloud-composer-and-authenticate-the-service-account/4646
+
+https://discourse.getdbt.com/t/running-dbt-in-composer-using-a-kubernetespodoperator/2590/6

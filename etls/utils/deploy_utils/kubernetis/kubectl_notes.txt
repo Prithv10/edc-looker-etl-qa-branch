@@ -1,0 +1,7 @@
+1.kubectl create namespace db-init-sample-ns
+
+2.Install gcloud
+
+3.gcloud auth print-access-token
+
+4.kubectl create secret docker-registry myregistrykey --docker-server=us-central1-docker.pkg.dev --docker-username=senthil --docker-password=ya29.a0AX9GBdX6YQZY8tuPqoeqggCt8vG8dzv5JcFseLtc7x225vzZB-ZMTANlT6MU3v_HFpC9NMP_tObZm7htcEPjmgkcRRXn2LtpMTgbSnNmkfWhMUerWTjSWgB1Dugs8UJwfWkuWboMHzryyLcdekOI5z50esgh3RrUmHtL0AaCgYKATMSAQASFQHUCsbCF_0VVu7qiX9OZKTJICe33w0173 --docker-email=senthil@squareshift.co --namespace=db-init-sample-ns

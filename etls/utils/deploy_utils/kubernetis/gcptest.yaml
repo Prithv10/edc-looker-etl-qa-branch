@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gcp-test-pod
+  namespace: db-init-sample-ns
+  labels:
+    app: gcp-test
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: gcp-test
+  template:
+    metadata:
+      labels:
+        app: gcp-test
+    spec:
+      containers:
+        - name: test-cont
+          #image: us-central1-docker.pkg.dev/edconcorddawntest/edcast-dbt-poc-repo/dbt-init-sample:0.1.1
+          #image: vijayaraghavan2309/senthilimg:v1
+          image: us-central1-docker.pkg.dev/edconcorddawntest/edcast-dbt-poc-repo/dbt-init-sample:0.1.1
+          imagePullPolicy: Always
+          command: [ "/bin/bash" ]
+          args: [ "echo Connect to image successful" ]
+      imagePullSecrets:
+        - name: myregistrykey

@@ -1,0 +1,12 @@
+# Docker Build
+docker build -t dbt-transformations:latest .
+docker run dbt-transformations:latest dbt run --project-dir ./etls --profiles-dir ./etls/profiles/docker --vars "var_cust_id: '222'" --select standard_reports
+docker run dbt-transformations:latest dbt run --project-dir ./etls --profiles-dir ./etls/profiles/docker --vars "var_cust_id: '15'" --select standard_reports
+
+
+# To build and push repo
+
+docker build -t dbt-init-sample:0.1.1 .
+docker tag dbt-init-sample:0.1.1 us-central1-docker.pkg.dev/edconcorddawntest/edcast-dbt-poc-repo/dbt-init-sample:0.1.1
+docker run dbt-init-sample:0.1.1 ./etls/utils/sh_utils/run_dbt_scripts.sh run /dbt True 13
+docker push us-central1-docker.pkg.dev/edconcorddawntest/edcast-dbt-poc-repo/dbt-init-sample:0.1.1

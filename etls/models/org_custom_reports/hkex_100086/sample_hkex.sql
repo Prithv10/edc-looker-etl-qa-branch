@@ -1,0 +1,1 @@
+Select * from {{ref('se0_searches_core_event_data_vw')}}

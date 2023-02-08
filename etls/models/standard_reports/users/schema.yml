@@ -1,0 +1,10 @@
+
+version: 2
+
+models:
+    - name: u0_usercards_event_vw
+      description: "A starter dbt model"
+      columns:
+          - name: time
+            description: "The primary key for this table"
+            

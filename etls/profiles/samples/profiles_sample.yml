@@ -1,0 +1,82 @@
+default:
+  outputs:
+    dev:
+      dataset: spark_edcast_dev
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-dev.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    test:
+      dataset: spark_edcast_qa
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-qa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    spark_initial:
+      dataset: spark_edcast
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-dev.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 4
+      type: bigquery
+    env_genpact:
+      dataset: genpact_dataset
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-dev.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    env_edc_qa_analytics_customer:
+      dataset: edc_qa_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-qa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    env_edc_prod_800009:
+      dataset: edc_prod_analytics_customer_800009
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\prod_integration\spark-edcast-prod-sa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-prod-06
+      threads: 6
+      type: bigquery  
+    env_edc_prod_analytics_customer:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 600
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\prod_integration\spark-edcast-prod-sa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-prod-06
+      threads: 6
+      type: bigquery  
+
+      
+  target: env_edc_qa_analytics_customer

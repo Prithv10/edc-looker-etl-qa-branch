@@ -1,0 +1,138 @@
+default:
+  outputs:
+    dev:
+      dataset: spark_edcast_dev
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\gcp_keys_v3_encrypted\gcp-us-central-1-qa-04-323821-ecfb2ae703ff.json
+      #keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\gcp-kafka-sa-credentials.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    test:
+      dataset: spark_edcast_qa
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\gcp-kafka-sa-credentials.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    spark_initial:
+      dataset: spark_edcast
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-dev.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 4
+      type: bigquery
+    env_genpact:
+      dataset: genpact_v1_dataset
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-dev.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 6
+      type: bigquery
+    env_edc_qa_analytics_customer:
+      dataset: edc_qa_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\gcp_keys_v3_encrypted\gcp-us-central-1-qa-04-323821-ecfb2ae703ff.json
+      #keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\gcp_dbtcloud_keys\spark-edcast-qa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-qa-04-323821
+      threads: 8
+      type: bigquery
+    env_edc_prod_800009:
+      dataset: edc_prod_analytics_customer_800009
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\prod_integration\spark-edcast-prod-sa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-prod-06
+      threads: 6
+      type: bigquery
+    env_edc_prod_analytics_customer:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\domo_migrate\admin\prod_integration\spark-edcast-prod-sa.json
+      location: us-central1
+      method: service-account
+      priority: interactive
+      project: gcp-us-central-1-prod-06
+      threads: 6
+      type: bigquery
+    env_edc_prod_analytics_customer_1_us_east4:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\custom_datasets\aws-us-east-1-prod-01-6d34dd32f429.json
+      location: us-east4
+      method: service-account
+      priority: interactive
+      project: aws-us-east-1-prod-01
+      threads: 8
+      type: bigquery
+    env_edc_prod_analytics_customer_2_europe_west3:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\custom_datasets\aws-eu-central-1-prod-02-44434e274630.json
+      location: europe-west3
+      method: service-account
+      priority: interactive
+      project: aws-eu-central-1-prod-02
+      threads: 8
+      type: bigquery
+    env_edc_prod_analytics_customer_3_us_west1:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\custom_datasets\aws-us-west-2-prod-03-9a66ad27c44c.json
+      location: us-west1
+      method: service-account
+      priority: interactive
+      project: aws-us-west-2-prod-03
+      threads: 8
+      type: bigquery
+    env_edc_prod_analytics_customer_4_australia_southeast1:
+      dataset: edc_prod_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\custom_datasets\aws-ap-southeast-2-prod-05-11e7710fb244.json
+      location: australia-southeast1
+      method: service-account
+      priority: interactive
+      project: aws-ap-southeast-2-prod-05
+      threads: 8
+      type: bigquery
+    env_edc_qa_analytics_customer_phase1:
+      dataset: edc_qa_analytics_customer
+      job_execution_timeout_seconds: 300
+      job_retries: 1
+      keyfile: C:\Senthil_Repo\SquareShift\Edcast\OnWorks\GCP\auth\qa_accounts\aws-us-east-1-qa-01-c8535c4c48ae.json
+      location: us-east1
+      method: service-account
+      priority: interactive
+      project: aws-us-east-1-qa-01
+      threads: 8
+      type: bigquery
+
+  target: env_edc_qa_analytics_customer_phase1
